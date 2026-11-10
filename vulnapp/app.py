@@ -412,6 +412,13 @@ def main() -> None:  # pragma: no cover - CLI entry
     mode = os.environ.get("APP_MODE", "vulnerable")
     host = os.environ.get("APP_HOST", "127.0.0.1")
     port = int(os.environ.get("APP_PORT", "5000"))
+    if mode == "fixed":
+        # The dev server adds "Server: Werkzeug/x Python/y" after the app runs,
+        # so after_request cannot hide it. Blank the version here (ZAP 10036).
+        from werkzeug.serving import WSGIRequestHandler
+
+        WSGIRequestHandler.server_version = "app"
+        WSGIRequestHandler.sys_version = ""
     create_app(mode).run(host=host, port=port, debug=False)
 
 
