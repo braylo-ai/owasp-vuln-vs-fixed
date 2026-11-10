@@ -1,6 +1,6 @@
 # owasp-vuln-vs-fixed
 
-A small Flask app with two modes — **vulnerable** and **fixed** — that covers SQL injection, XSS (reflected + stored), CSRF, SSRF, IDOR and broken authentication. 43 tests prove each exploit works in vulnerable mode and is blocked in fixed mode. Part of a security-engineering portfolio; the [`devsecops-pipeline`](https://github.com/braylo777/devsecops-pipeline) repo scans this app with SAST, SCA, container and DAST tools.
+A small Flask app with two modes — **vulnerable** and **fixed** — that covers SQL injection, XSS (reflected + stored), CSRF, SSRF, IDOR and broken authentication. 43 tests prove each exploit works in vulnerable mode and is blocked in fixed mode. Part of a security-engineering portfolio; the [`devsecops-pipeline`](https://github.com/braylo-ai/devsecops-pipeline) repo scans this app with SAST, SCA, container and DAST tools.
 
 > **Local use only.** Vulnerable mode is unsafe by design. It binds to `127.0.0.1` by default. Never expose it to a network.
 
